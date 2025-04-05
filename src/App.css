@@ -1,101 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+    
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
     * {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+        @apply m-0 p-0;
     }
 
     body {
-    background: #8758ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+        @apply bg-baseColor flex justify-center items-center box-border font-sans;
+        font-family: 'Poppins', sans-serif;
     }
 
     .App {
-    text-align: center;
+        @apply text-center;
     }
 
     h1 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 1.75rem;
-    text-transform: capitalize;
+        @apply text-headerColor  mb-[0.5rem] text-[1.75rem] capitalize;
+    }
+
+    @media (width <= 400px) {
+        h1 {
+            @apply text-[24px];
+            }
     }
 
     .TodoWrapper {
-    background: #1A1A40;
-    margin-top: 5rem;
-    padding: 2rem;
-    border-radius: 5px;
+        @apply bg-appCplor mt-[5rem] p-[2rem] rounded-[5px];
     }
 
     .TodoForm {
-    width: 100%;
-    margin-bottom: 1rem;
+        @apply w-full mb-[1rem];
     }
 
     .todo-input {
-    outline: none;
-    background: none;
-    border: 1px solid #8758ff;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    width: 300px;
-    color: #fff;
+        @apply outline-none bg-transparent border-[1px] border-baseColor py-[0.5rem] px-[1rem] mt-[1rem] mb-[2rem] w-[300px] text-headerColor;
+    }
+
+    @media (width <= 500px) {
+        .todo-input {
+            @apply w-[200px];
+            }
+        
+        .todo-input::placeholder {
+            @apply text-[13px];
+            }
     }
 
     .todo-input::placeholder {
-    color: #ffffff4d;
+        @apply text-placeHolderColor;
     }
 
     .todo-btn {
-    background: #8758ff;
-    color: #fff;
-    border: none;
-    padding: 0.55rem;
-    cursor: pointer;
-    text-transform: capitalize;
+        @apply bg-baseColor text-white border-none p-[0.55rem] cursor-pointer capitalize;
     }
 
     .Todo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #8758ff;
-    color: #fff;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+        @apply flex justify-between items-center bg-baseColor text-white py-[0.75rem] px-[1rem] rounded-[5px] mb-[1rem];
     }
 
     .Todo > p {
-        cursor: pointer;
+        @apply cursor-pointer;
     }
 
     .update input {
-        margin: 0;
+        @apply m-0;
     }
 
     .fa-trash {
-    margin-left: 0.75rem;
+        @apply ml-[0.75rem]
     }
 
     .incompleted {
-    color: #fff;
-    cursor: pointer;
+        @apply text-headerColor cursor-pointer;
     }
 
     .completed {
-    color: #c5aeff;
-    text-decoration: line-through;
-    cursor: pointer;
+    @apply cursor-pointer text-completedColor line-through;
     }
 
     .edit-icon,
     .delete-icon {
-    cursor: pointer;
+        @apply cursor-pointer;
     }

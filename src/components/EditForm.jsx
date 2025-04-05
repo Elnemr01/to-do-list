@@ -20,9 +20,9 @@ const EditForm = ({id}) => {
 
     return (
         <form className="TodoForm update" onSubmit={(ev)=> handleSubmit(ev)}>
-        <input type="text" className='todo-input' placeholder='type your updated task here' onChange={(ev)=> handleChange(ev)}
+        <input type="text" className='todo-input' placeholder='update your task' onChange={(ev)=> handleChange(ev)}
         value={value}/>
-        <button type='submit' className='todo-btn'>add task</button>
+        <button type='submit' className='todo-btn'>update</button>
     </form>
     )
 }
