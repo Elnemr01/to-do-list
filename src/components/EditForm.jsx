@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { finishEditTask } from './reduxToolkit/taskSlice';
+import { addTask, finishEditTask, updateTask } from './reduxToolkit/taskSlice';
 
 const EditForm = ({id}) => {
 
@@ -14,6 +14,7 @@ const EditForm = ({id}) => {
 
     function handleSubmit (ev) {
         ev.preventDefault();
+        dispatch(updateTask({id:id , val: value}))
         dispatch(finishEditTask(id));
         setValue("");
     }

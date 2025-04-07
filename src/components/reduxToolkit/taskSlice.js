@@ -32,9 +32,14 @@ let taskSlice = createSlice({
         finishEditTask: (state,action)=> {
             state=state.map((tsk)=> tsk.id===action.payload ? {...tsk,isEditing:false} : tsk);
             return state;
+        },
+
+        updateTask: (state,action) => {
+            state=state.map((tsk)=> tsk.id===action.payload.id ? {...tsk,task:action.payload.val} : tsk);
+            return state;
         }
     }
 })
 
 export default taskSlice.reducer;
-export let {addTask,markedAsCompleted,deleteCompetedTask,startEditTask,finishEditTask}=taskSlice.actions;
+export let {addTask,markedAsCompleted,deleteCompetedTask,startEditTask,finishEditTask,updateTask}=taskSlice.actions;
